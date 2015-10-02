@@ -12,14 +12,12 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y libqtwebkit-dev qt4-qmake
 
-RUN gem install \
-    bundler \
-    cucumber \
-    rspec \
-    capybara \
-    capybara-screenshot \
-    capybara-webkit \
-    selenium-webdriver
+RUN gem install bundler
+
+ADD ./Gemfile /usr/src/Gemfile
+RUN bundler install \
+    --gemfile /usr/src/Gemfile \
+    --clean
 
 # cleanup
 RUN apt-get autoremove -y && \
