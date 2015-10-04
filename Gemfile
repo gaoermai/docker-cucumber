@@ -3,8 +3,9 @@ source 'https://ruby.taobao.org'
 
 ruby '2.2.3'
 
-gem 'cucumber'
 gem 'minitest'
+gem 'cucumber'
+gem 'rspec', '~> 3.3.0'
 gem 'capybara', '~>2.5.0'
 gem 'capybara-mechanize'
 gem 'capybara-screenshot'
